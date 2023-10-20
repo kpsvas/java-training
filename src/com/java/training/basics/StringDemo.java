@@ -1,22 +1,28 @@
-package com.java.training;
+package com.java.training.basics;
 
 public class StringDemo {
+
     public static void main(String[] args) {
 
         //	The String class is immutable.
         String txt = "Hello World";
+
         System.out.println(txt.toUpperCase());
         System.out.println(txt.toLowerCase());
-        System.out.println(txt.indexOf("World!"));
+        System.out.println(txt.indexOf("World"));
 
         String firstName = "John";
         String lastName = "Doe";
+
         System.out.println(firstName + " " + lastName);
         System.out.println(firstName.concat(lastName));
 
         StringBuffer sb = new StringBuffer("Hello ");
         sb.append("World!"); // now original string is changed
         System.out.println(sb);
+        System.out.println(sb.indexOf("World!"));
+        //If no such value of k exists, then -1 is returned.
+
 
         String s1 = "Geeks";
         s1.concat("forgeeks"); // s1 is not changed

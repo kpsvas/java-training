@@ -1,4 +1,4 @@
-package com.java.training;
+package com.java.training.oops;
 
 // There are two ways to achieve abstraction in java
 // Abstract class (0 to 100%) and Interface (100%)
@@ -21,10 +21,10 @@ class BOA extends Bank{
 
 class AbstractRealScenarioExample{
     public static void main(String args[]){
-        Bank b;
-        b=new Chase();
-        System.out.println("Rate of Interest is: "+b.getRateOfInterest()+" %");
-        b=new BOA();
-        System.out.println("Rate of Interest is: "+b.getRateOfInterest()+" %");
+
+        Bank chase=new Chase();
+        System.out.println("Rate of Interest is: "+chase.getRateOfInterest()+" %");
+        Bank boa=new BOA();
+        System.out.println("Rate of Interest is: "+boa.getRateOfInterest()+" %");
     }
 }
