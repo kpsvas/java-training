@@ -1,18 +1,26 @@
 package com.java.training.oops;
 
-interface Car {
-    void drive();
+// declaring abstract or creating an interface
+
+abstract class Car {
+    abstract void start();
 }
 
-class Tesla implements Car {
-    public void drive(){
-        System.out.println("Drive Safely");
+class Tesla extends Car {
+    public void start(){
+        System.out.println("Tesla Drive Safely");
+    }
+}
+
+class Honda extends Car {
+    public void start(){
+        System.out.println("Honda Drive Safely");
     }
 }
 
 public class AbstractClassDemo {
     public static void main (String args[]) {
-        Tesla obj = new Tesla();
-        obj.drive();
+        Car obj = new Tesla();
+        obj.start();
     }
 }

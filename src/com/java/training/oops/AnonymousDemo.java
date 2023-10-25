@@ -3,10 +3,11 @@ package com.java.training.oops;
 // Java Program to Demonstrate Anonymous inner class
 
 // Interface
-interface Age {
+abstract class Age {
     int x = 21;
-    void getAge();
+    abstract void getAge();
 }
+
 
 // Main class
 class AnonymousDemo {
@@ -18,16 +19,16 @@ class AnonymousDemo {
         // Myclass is hidden inner class of Age interface
         // whose name is not written but an object to it
         // is created.
-        Age oj1 = new Age() {
+        Age age1 = new Age() {
 
-            @Override public void getAge()
+            public void getAge()
             {
                 // printing  age
                 System.out.print("Age is " + x);
             }
         };
 
-        oj1.getAge();
+        age1.getAge();
     }
 }
 
