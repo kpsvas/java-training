@@ -5,9 +5,8 @@ package com.java.training.oops;
 // Interface
 abstract class Age {
     int x = 21;
-    abstract void getAge();
+    abstract void displayAge();
 }
-
 
 // Main class
 class AnonymousDemo {
@@ -20,15 +19,15 @@ class AnonymousDemo {
         // whose name is not written but an object to it
         // is created.
         Age age1 = new Age() {
-
-            public void getAge()
+            public void displayAge()
             {
                 // printing  age
-                System.out.print("Age is " + x);
+                System.out.print("Age is x ");
             }
-        };
 
-        age1.getAge();
+        };
+        age1.displayAge();
     }
 }
+
 

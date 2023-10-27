@@ -1,48 +1,45 @@
 package com.java.training.exceptions;
 
-class RunnableDemo implements Runnable {
-
-    private Thread t;
-    private String threadName;
-
-    RunnableDemo( String name) {
-        threadName = name;
-        System.out.println("Creating " +  threadName );
-    }
-
-    public void run() {
-        System.out.println("Running " +  threadName );
-        try {
-            for(int i = 4; i > 0; i--) {
-                System.out.println("Thread: " + threadName + ", " + i);
-                // Let the thread sleep for a while.
-                Thread.sleep(50);
-            }
-        } catch (InterruptedException e) {
-            System.out.println("Thread " +  threadName + " interrupted.");
-        }
-        System.out.println("Thread " +  threadName + " exiting.");
-    }
-
-    public void start () {
-
-        System.out.println("Starting " +  threadName );
-        if (t == null) {
-            t = new Thread (this, threadName);
-            t.start ();
-        }
-    }
-}
-
 public class TestThread {
 
     public static void main(String args[]) {
 
-        RunnableDemo R1 = new RunnableDemo( "Thread-1");
-        R1.start();
+        MyThreadDemo thread1 = new MyThreadDemo("Facebook");
+        thread1.start();
+        MyThreadDemo thread2 = new MyThreadDemo("Twitter");
+        thread2.start();
+        MyThreadDemo thread3 = new MyThreadDemo("Google");
+        thread3.start();
 
-        RunnableDemo R2 = new RunnableDemo( "Thread-2");
-        R2.start();
+    }
+}
+
+class MyThreadDemo extends Thread {
+
+    public MyThreadDemo(String threadName) {
+        // super: Allocates a new Thread object.
+        // This constructor has the same effect as Thread (null, null, name).
+        super(threadName);
+    }
+
+    public void run() {
+
+        for (int counter = 1; counter <= 5; counter++) {
+
+            System.out.println("Loop " + counter + ": " + getName() + ", ID: " + getId() + ", State: " + getState());
+
+            try {
+                // random(): returns a double value with a positive sign, greater than or equal to 0.0 and less than 1.0.
+                sleep((int) (Math.random() * 2000));
+
+            } catch (InterruptedException e) {
+                // printStackTrace(): Prints this throwable and its backtrace to the standard error stream.
+                // This method prints a stack trace for this Throwable object on the error output stream that is the value of the field System.err.
+                e.printStackTrace();
+            }
+        }
+
+        //System.out.println("\n========= Test Finished for: " + getName() + ":" + getState());
     }
 }
 
