@@ -8,7 +8,7 @@ public class ExceptionDemo {
 
         System.out.println(myNumbers.length);
 
-            System.out.println(myNumbers[5]); //breaking - throwing an exception
+        System.out.println(myNumbers[5]); //breaking - throwing an exception
 
         System.out.println(myNumbers[2]);
     }
