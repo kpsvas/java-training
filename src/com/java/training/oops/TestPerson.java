@@ -1,17 +1,12 @@
 package com.java.training.oops;
 
-import java.util.Objects;
+import java.util.*;
 
 class Person {
 
     private String firstName;
     private String lastName;
 
-    public Person(){
-        this.firstName = "Srini";
-        this.lastName = "Komatip";
-
-    }
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -41,35 +36,22 @@ class Person {
                 ", lastName='" + lastName + '\'' +
                 '}';
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(firstName, lastName);
-    }
 }
 
 public class TestPerson {
 
     public static void main(String[] args) {
 
-        Person person1 = new Person();
-        System.out.println(person1.hashCode());
+        Person person1 = new Person("Srini", "Komatip");
+        Person person2 = new Person("Deepak", "K");
 
-        Person person2 = new Person("Srini", "Komatip");
-        System.out.println(person2);
+        HashMap<String, Person> personHashMap = new HashMap<>();
+        personHashMap.put(person1.getLastName(), person1);
+        personHashMap.put(person2.getLastName(), person2);
 
-        if(person1.equals(person2)){
-            System.out.println("same");
-        }else{
-            System.out.println("not same");
+        for (String key : personHashMap.keySet()){
+            Person person = personHashMap.get(key);
+            System.out.println(person.getFirstName());
         }
 
     }
