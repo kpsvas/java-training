@@ -8,12 +8,15 @@ public class JDBCDemo {
 
     public static void main(String args[]) throws Exception {
 
-        String driverClassName = "com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://108.175.13.142:3306/employee_db?useSSL=false";
-        String username = "root";
-        String password = "Srr@1216it";
-        String query = "INSERT INTO employee (employee_id, first_name, last_name, email_id) " +
-                "VALUES (5,'Srini', 'Komatipally', 'kpsvas@gmail.com')";
+        String driverClassName = "org.h2.Driver";// com.mysql.jdbc.Driver";
+        String url = "jdbc:h2:~/test";// jdbc:mysql://108.175.13.142:3306/employee_db?useSSL=false";
+        String username = "sa";// root";
+        String password = "";//Srr@1216it";
+
+         /* String query = "INSERT INTO employee (employee_id, first_name, last_name, email_id) " +
+                "VALUES (5,'Srini', 'Komatipally', 'kpsvas@gmail.com')"; */
+
+        String query = "INSERT INTO student (id, name, city, state) VALUES (3,'Srini', 'Edison', 'NJ')";
 
         // Load driver class
         Class.forName(driverClassName);
