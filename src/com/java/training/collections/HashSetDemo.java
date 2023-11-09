@@ -10,6 +10,7 @@ public class HashSetDemo {
     public static void main(String[] args) {
 
         HashSet<String> cars = new HashSet<String>();
+
         cars.add("Volvo");
         cars.add("BMW");
         cars.add("Ford");
@@ -23,11 +24,8 @@ public class HashSetDemo {
 
         // Get the iterator
         Iterator<String> it = cars.iterator();
-
         while (it.hasNext()) {
-            if(it.next().equalsIgnoreCase("BMW")) {
-                it.remove();
-            }
+            System.out.println(it.next());
         }
 
     }

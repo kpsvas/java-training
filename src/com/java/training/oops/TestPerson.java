@@ -46,12 +46,16 @@ public class TestPerson {
         Person person2 = new Person("Deepak", "K");
 
         HashMap<String, Person> personHashMap = new HashMap<>();
+
         personHashMap.put(person1.getLastName(), person1);
         personHashMap.put(person2.getLastName(), person2);
 
         for (String key : personHashMap.keySet()){
             Person person = personHashMap.get(key);
             System.out.println(person.getFirstName());
+            if(person.getFirstName().equalsIgnoreCase("Srini")){
+                System.out.println("This is person Srini");
+            }
         }
 
     }

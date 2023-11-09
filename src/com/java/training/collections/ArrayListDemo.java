@@ -1,20 +1,21 @@
 package com.java.training.collections;
 
 import java.util.ArrayList; // import the ArrayList class
+
 import java.util.Collections;
 
 public class ArrayListDemo {
 
     public static void main(String[] args) {
 
-        ArrayList<Integer> myNumbers = new ArrayList<Integer>(); // Create an ArrayList object of Integers
-
+        ArrayList<Integer> myNumbers = new ArrayList<>(); // Create an ArrayList object of Integers
         myNumbers.add(33);
         myNumbers.add(15);
         myNumbers.add(20);
         myNumbers.add(34);
         myNumbers.add(8);
         myNumbers.add(12);
+
         // Integer -> class -
         // int - simple - >
 
@@ -25,9 +26,16 @@ public class ArrayListDemo {
         Collections.sort(myNumbers);  // Sort myNumbers
 
         System.out.println("+++++++++++++++++++++");
+
         for (Integer i : myNumbers) {
             System.out.println(i);
+            if(i == 33) {
+                myNumbers.remove(i);
+            }
         }
+
+        System.out.println(myNumbers);
+
         System.out.println("+++++++++++++++++++++");
 
         ArrayList<String> cars = new ArrayList<String>(); // Create an ArrayList object

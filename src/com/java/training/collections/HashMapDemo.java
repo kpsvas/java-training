@@ -21,6 +21,8 @@ public class HashMapDemo {
 
         System.out.println(capitalCities);
 
+        System.out.println(capitalCities.get("England"));
+
        // Print keys
         for (String i : capitalCities.keySet()) {
             System.out.println(i);
@@ -33,8 +35,8 @@ public class HashMapDemo {
 
 
         // Print keys and values
-        for (String i : capitalCities.keySet()) {
-            System.out.println("key: " + i + " value: " + capitalCities.get(i));
+        for (String key : capitalCities.keySet()) {
+            System.out.println("key: " + key + " value: " + capitalCities.get(key));
         }
 
         Hashtable<String, Integer> hashtable = new Hashtable<>();
